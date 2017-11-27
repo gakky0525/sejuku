@@ -27,6 +27,11 @@
             background: -webkit-linear-gradient(top, #FBFCFC, #F0F8F1);
             background: linear-gradient(#FBFCFC, #F0F8F1);
         }
+        
+        #end{
+            margin-top: 480px;
+        }         
+        
                  
         #contents {
             width:824px;
@@ -149,7 +154,32 @@
            
         }
         
+        
+        
+        
     </style>
+    <link type="text/css" rel="stylesheet"
+        href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <script type="text/javascript"
+            src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript"
+        src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    
+    <script>
+        $(function() {
+        $( "#firstday" ).datepicker({
+        beforeShowDay: $.datepicker.noWeekends
+        });
+        });
+        
+        $(function() {
+        $( "#enddatebtn" ).datepicker({
+        beforeShowDay: $.datepicker.noWeekends
+        });
+        });
+    </script>
+    
+
 </head>
 <body>
     <div id="sideNav">
@@ -157,7 +187,7 @@
         <li><a href="" class="linkBtn">カルテ貸出</a></li>
         <li><a href="" class="linkBtn">カルテ一覧</a></li>
         <li><a href="" class="linkBtn">カルテ管理</a></li>
-        <li><a href="" class="linkBtn">終　　　了</a></li>
+        <li id="end"><a href="" class="linkBtn">終　　　了</a></li>
         </ul>
     </div>
 
@@ -168,30 +198,16 @@
             </div>
             <div id="common">
                 <div>
-                    <label><span class="commonCols">開始日</span><input type="text" id="firstday" />
-                    <input type="submit" value="≫"/></label>
+                    <label><span class="commonCols">開始日</span><input type="text"/>
+                    <input type="button" value="≫" id="firstday" /></label>
                 </div>
-                <div>
-                    <label><span class="commonCols">終了日</span><input type="text" id="lastday" />
-                    <input type="submit" value="≫"/></label>
+                                <div>
+                    <label><span class="commonCols">終了日</span><input type="text"/>
+                    <input type="button" value="≫" id="enddatebtn" /></label>
                 </div>
-          <!--      <div>
 
-                    <label><span class="commonCols">フリガナ</span><input type="text" id="kana"/></label>
-                    <label><span class="commonCols">氏名</span><input type="text" id="name"/></label>
-                </div>
-               <div>
-                    <label><span class="commonCols">生年月日</span><input type="text" id="birth" size="10"/></label>
-                    <label><span class="commonCols">年齢</span><input type="text" id="age" size="2"/></label>
-                    <label>
-                        <span class="commonCols">性別</span>
-                        <select id="gender">
-                            <option value="">選択してください</option>
-                            <option value="男">男</option>
-                            <option value="女">女</option>
-                        </select>
-                    </label>
-                </div>
+        <!--             
+                     
                 -->
                 <div id="commonCols">
                     <input type="submit" value="検索"/>
