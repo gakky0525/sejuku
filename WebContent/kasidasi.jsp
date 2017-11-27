@@ -4,7 +4,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8"/>
-    <title>カルテ管理</title>
+    <title>貸出</title>
     <style>
         body {
             width:1024px;
