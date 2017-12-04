@@ -1,12 +1,11 @@
-<!--<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
--->
 
 <!doctype html>
 <html lang="ja">
 <head>
     <meta charset="utf-8"/>
-    <title>カルテ貸出</title>
+    <title>カルテ管理</title>
     <style>
         body {
             width:1024px;
@@ -27,11 +26,11 @@
             background: -webkit-linear-gradient(top, #FBFCFC, #F0F8F1);
             background: linear-gradient(#FBFCFC, #F0F8F1);
         }
+
         #end{
             margin-top: 480px;
-        }         
-        
-        
+        }
+
         #contents {
             width:824px;
             height:100%;
@@ -44,7 +43,7 @@
         #common {
             height:230px;
             border:1px solid #000;
-           
+
         }
         #detail {
             height:388px;
@@ -62,7 +61,7 @@
             background: -moz-linear-gradient(top, #FBFCFC, #F0F8F1);
             background: -webkit-linear-gradient(top, #FBFCFC, #F0F8F1);
             background: linear-gradient(#FBFCFC, #F0F8F1);
-            
+
         }
         #Ikkatu{
               float:right;
@@ -125,8 +124,8 @@
             border-bottom: solid 5px #556B2f;
             text-shadow: -1px -1px rgba(255, 255, 255, 0.43), 1px 1px rgba(0, 0, 0, 0.49);
             transition: .4s;
-          }            
-        
+          }
+
          .linkBtn:active{
             -ms-transform: translateY(2px);
             -webkit-transform: translateY(2px);
@@ -134,7 +133,7 @@
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
             border-bottom: none;
           }
-        
+
            form#form1 {
             width:100%;
            /* padding: 10px;*/
@@ -150,27 +149,25 @@
 
         .kasidasiType {
             margin-right:25px;
-           
+
         }
-        
+
     </style>
 </head>
 <body>
     <div id="sideNav">
         <ul style="list-style:none;">
-        <li><a href="" class="linkBtn">カルテ貸出</a></li>
-        <li><a href="" class="linkBtn">カルテ一覧</a></li>
-        <li><a href="" class="linkBtn">カルテ管理</a></li>
-        <li id="end"><a href="" class="linkBtn" >終　　　了</a></li>
+        <li><a href="kanri.jsp" class="linkBtn">カルテ貸出</a></li>
+        <li><a href="karuteichiran.jsp" class="linkBtn">カルテ一覧</a></li>
+        <li><a href="kasidasi.jsp" class="linkBtn">カルテ管理</a></li>
+        <li id="end"><a href="" class="linkBtn">終　　　了</a></li>
         </ul>
     </div>
 
     <div id="contents">
         <form id="form1">
             <div id="type">
-               <label class="kasidasiType"><input type="radio" name="kasidasiType"/>貸出</label>
-               <label class="kasidasiType"><input type="radio" name="kasidasiType"/>返却</label>
-               <label class="kasidasiType"><input type="radio" name="kasidasiType"/>すべて</label>
+                カルテ管理
             </div>
             <div id="common">
                 <div>
@@ -187,6 +184,7 @@
                 <div>
                     <label><span class="commonCols">生年月日</span><input type="text" id="birth" size="10"/></label>
                     <label><span class="commonCols">年齢</span><input type="text" id="age" size="2"/></label>
+                    <label><span class="commonCols">血液型</span><input type="text" id="abo" size="2"/></label>
                     <label>
                         <span class="commonCols">性別</span>
                         <select id="gender">
@@ -196,6 +194,11 @@
                         </select>
                     </label>
                 </div>
+                <div>
+
+                    <label><span class="commonCols">住所</span><input type="text" id="address"/></label>
+                    <label><span class="commonCols">電話番号</span><input type="text" id="tel"/></label>
+                </div>
                 <div id="commonCols">
                     <input type="submit" value="検索"/>
                     <input type="submit" value="クリア"/>
@@ -204,39 +207,37 @@
         </form>
     <div id="detail">
         <table border="3" rules="all" >
-            <tr class="detailCols"><th>氏名 </th><th>フリガナ</th><th>ID</th><th>カルテ番号</th><th>診療科</th><th>入院日</th><th>退院日</th><th>提出先</th><th>貸出状況</th><th>選択</th></tr>
-     <!--    <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
+            <tr class="detailCols">
 
-      -->    
-            
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル        9</td><td>セル10</td></tr>
+                <tr>
+                    <td>入院科</td> <td>内科</td> <td>主治医</td><td>長岐　由樹</td><td>死亡日</td><td>-----</td>
+                </tr>
+                <tr>
+                    <td>入院病棟</td> <td>東５病棟</td> <td>担当医１</td><td>名医</td><td>解剖有無</td><td>-----</td>
+                </tr>
+                <tr>
+                    <td>入院日</td> <td>2017/05/25</td> <td>担当医２</td><td>名医</td>
+                </tr>
+                <tr>
+                    <td>退院日</td> <td>2017/10/22</td> <td>退院科</td><td>皮膚科</td>
+                </tr>
+                <tr>
+                    <td>紹介状</td> <td>あり</td> <td>退院時病棟</td><td>西４病棟</td>
+                </tr>
+                <tr>
+                    <td>救急車</td> <td>なし</td> <td>転帰</td><td>治癒</td>
+                </tr>
+        </table>
 
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
 
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-            </table>
         </div>
 
         <div id="controls" style="clear:both;">
-            <input type="submit" id="Ikkatu" value="一括貸出・返却"/>
+            <input type="submit" id="touroku" value="登録"/>
+            <input type="submit" id="hennsyuu" value="編集"/>
+            <input type="submit" id="sakujo" value="削除"/>
         </div>
      </div>
-   
+
 </body>
 </html>
