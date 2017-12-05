@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ja">
 <head>
@@ -201,7 +202,7 @@
         <div id="detail">
            <table border="3" rules="all">
                <tr class="detailCols"><th>氏名 </th><th>フリガナ</th><th>ID</th><th>カルテ番号</th><th>診療科</th><th>入院日</th><th>退院日</th><th>提出先</th><th>貸出状況</th><th>選択</th></tr>
-               <c:forEach var="data" items="${dataList}">
+               <c:forEach var="dto" items="${dataList}">
                    <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
                </c:forEach>
            </table>
