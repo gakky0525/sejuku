@@ -199,7 +199,13 @@
             </div>
             <div id="common">
                <div>
-                    <label><span class="commonCols">検索内容</span><input type="text" /></label>
+                    <label><span class="commonCols">検索内容</span>
+                    <select name="example">
+					<option value="サンプル1">サンプル1</option>
+					<option value="サンプル2">サンプル2</option>
+					<option value="サンプル3">サンプル3</option>
+					</select>
+					</label>
                 </div>
                 <div>
                     <label><span class="commonCols">開始日</span><input type="text" id="firstday" /></label>
