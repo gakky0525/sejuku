@@ -163,7 +163,7 @@
     </div>
 
     <div id="contents">
-        <form id="form1">
+        <form id="form1" method="post">
             <div id="type">
                <label class="kasidasiType"><input type="radio" name="kasidasiType"/>貸出</label>
                <label class="kasidasiType"><input type="radio" name="kasidasiType"/>返却</label>
@@ -171,7 +171,7 @@
             </div>
             <div id="common">
                 <div>
-                    <label><span class="commonCols">ID</span><input type="text" id="userId" /></label>
+                    <label><span class="commonCols">ID</span><input type="text" id="userId" name="userId" /></label>
                 </div>
                 <div>
                     <label><span class="commonCols">カルテ番号</span><input type="text" id="karteNo" /></label>
