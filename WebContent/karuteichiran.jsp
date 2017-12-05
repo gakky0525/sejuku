@@ -201,9 +201,9 @@
                <div>
                     <label><span class="commonCols">検索内容</span>
                     <select name="example">
-					<option value="サンプル1">サンプル1</option>
-					<option value="サンプル2">サンプル2</option>
-					<option value="サンプル3">サンプル3</option>
+					<option value="サンプル1">未作成退院サマリー</option>
+					<option value="サンプル2">カルテ未返却リスト</option>
+					<option value="サンプル3">カルテ不明リスト</option>
 					</select>
 					</label>
                 </div>
@@ -221,8 +221,8 @@
             </div>
         </form>
     <div id="detail">
-        <table border="3" rules="all" >
-            <tr class="detailCols"><th>ID</th><th>氏名</th><th>入院日</th><th>退院日</th><th>返却日</th><th>退院日</th></tr>
+        <table border="3" rules="all" style="margin:auto;" >
+            <tr class="detailCols"><th>ID</th><th>氏名</th><th>入院日</th><th>退院日</th><th>返却日</th><th>搬入日</th></tr>
       <!--       <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
 
           -->

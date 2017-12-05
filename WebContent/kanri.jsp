@@ -206,7 +206,7 @@
             </div>
         </form>
     <div id="detail">
-        <table border="3" rules="all" >
+        <table border="3" rules="all"  style="margin:auto;">
             <tr class="detailCols">
 
                 <tr>

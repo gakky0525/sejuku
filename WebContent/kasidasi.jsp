@@ -174,19 +174,19 @@
                     <label><span class="commonCols">ID</span><input type="text" id="userId" name="userId" /></label>
                 </div>
                 <div>
-                    <label><span class="commonCols">カルテ番号</span><input type="text" id="karteNo" /></label>
+                    <label><span class="commonCols">カルテ番号</span><input type="text" id="karteNo" name="karteNo" /></label>
                 </div>
                 <div>
 
-                    <label><span class="commonCols">フリガナ</span><input type="text" id="kana"/></label>
-                    <label><span class="commonCols">氏名</span><input type="text" id="name"/></label>
+                    <label><span class="commonCols">フリガナ</span><input type="text" id="kana" name="kana"/></label>
+                    <label><span class="commonCols">氏名</span><input type="text" id="name" name="name"/></label>
                 </div>
                 <div>
-                    <label><span class="commonCols">生年月日</span><input type="text" id="birth" size="10"/></label>
-                    <label><span class="commonCols">年齢</span><input type="text" id="age" size="2"/></label>
+                    <label><span class="commonCols">生年月日</span><input type="text" id="birth" size="10" name="birth"/></label>
+                    <label><span class="commonCols">年齢</span><input type="text" id="age" size="2" name="age"/></label>
                     <label>
                         <span class="commonCols">性別</span>
-                        <select id="gender">
+                        <select id="gender" name="gender">
                             <option value="">選択してください</option>
                             <option value="男">男</option>
                             <option value="女">女</option>
@@ -200,7 +200,7 @@
             </div>
         </form>
         <div id="detail">
-           <table border="3" rules="all">
+           <table border="3" rules="all" style="margin:auto;">
                <tr class="detailCols"><th>氏名 </th><th>フリガナ</th><th>ID</th><th>カルテ番号</th><th>診療科</th><th>入院日</th><th>退院日</th><th>提出先</th><th>貸出状況</th><th>選択</th></tr>
                <c:forEach var="dto" items="${dataList}">
                    <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
