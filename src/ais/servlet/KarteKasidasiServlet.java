@@ -1,6 +1,7 @@
 package ais.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -42,7 +43,20 @@ public class KarteKasidasiServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		List<KarteKasidasiDto> dataList = CsvUtil.importKasidasiCSV("/Users/fhideaki/work/dev/workspace_samrai/ais/data/kasidasi.csv");
+		List<KarteKasidasiDto> viewList = new ArrayList<KarteKasidasiDto>();
+
+		String userId = request.getParameter("userId");
+
+		for(KarteKasidasiDto dto : dataList) {
+			if(dto.getId().equals(userId)) {
+				viewList.add(dto);
+			}
+		}
+
+		request.setAttribute("dataList", viewList);
+
+		request.getRequestDispatcher("kasidasi.jsp").forward(request, response);
 	}
 
 }
