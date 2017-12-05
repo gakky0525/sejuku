@@ -198,33 +198,13 @@
                 </div>
             </div>
         </form>
-    <div id="detail">
-        <table border="3" rules="all">
-            <tr class="detailCols"><th>氏名 </th><th>フリガナ</th><th>ID</th><th>カルテ番号</th><th>診療科</th><th>入院日</th><th>退院日</th><th>提出先</th><th>貸出状況</th><th>選択</th></tr>
-           <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル        9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-
-            <tr><td>セル１</td><td>セル２</td><td>セル３</td><td>セル4</td><td>セル5</td><td>セル6</td><td>セル7</td><td>セル8</td><td>セル9</td><td>セル10</td></tr>
-            </table>
+        <div id="detail">
+           <table border="3" rules="all">
+               <tr class="detailCols"><th>氏名 </th><th>フリガナ</th><th>ID</th><th>カルテ番号</th><th>診療科</th><th>入院日</th><th>退院日</th><th>提出先</th><th>貸出状況</th><th>選択</th></tr>
+               <c:forEach var="data" items="${dataList}">
+                   <tr><td>${dto.name}</td><td>${dto.kana}</td><td>${dto.id}</td><td>${dto.karteNo}</td><td>${dto.kaMei}</td><td>${dto.nyuinDate}</td><td>${dto.taiinDate}</td><td>${dto.teisyutu}</td><td>${dto.kasidasi}</td><td></td></tr>
+               </c:forEach>
+           </table>
         </div>
 
         <div id="controls" style="clear:both;">
