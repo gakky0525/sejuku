@@ -10,7 +10,7 @@ import ais.dto.KarteKasidasiDto;
 public class CsvUtil {
 
 	public static void main(String[] args) {
-		List<KarteKasidasiDto> dataList = importKasidasiCSV("/Users/fhideaki/work/dev/workspace_samrai/ais/data/kasidasi.csv");
+		List<KarteKasidasiDto> dataList = importKasidasiCSV("C:\\Users\\yuki\\Desktop\\Java関係\\pleiades\\workspace\\ais2\\data\\kasidasi.csv");
 
 		for(KarteKasidasiDto data : dataList) {
 			System.out.println(data.getName());
