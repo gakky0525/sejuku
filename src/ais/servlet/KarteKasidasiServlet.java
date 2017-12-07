@@ -43,15 +43,23 @@ public class KarteKasidasiServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<KarteKasidasiDto> dataList = CsvUtil.importKasidasiCSV("/Users/fhideaki/work/dev/workspace_samrai/ais/data/kasidasi.csv");
+		List<KarteKasidasiDto> dataList = CsvUtil.importKasidasiCSV("C:\\Users\\yuki\\Desktop\\Java関係\\pleiades\\workspace\\ais2\\data\\kasidasi.csv");
 		List<KarteKasidasiDto> viewList = new ArrayList<KarteKasidasiDto>();
 
 		String userId = request.getParameter("userId");
+		String karteNo = request.getParameter("karteNo");
+		String kana = request.getParameter("kana");
+		String name = request.getParameter("name");
+	//	String birth = request.getParameter("birth");    csvにないデータ
+	//	String age = request.getParameter("age");
+	//	String gender = request.getParameter("gender");
 
 		for(KarteKasidasiDto dto : dataList) {
-			if(dto.getId().equals(userId)) {
+			if(dto.getId().startsWith(userId)) {
 				viewList.add(dto);
-			}
+			}//else if (dto.getKarteNo().startsWith(karteNo)) {
+			//	viewList.add(dto);
+			//}
 		}
 
 		request.setAttribute("dataList", viewList);
