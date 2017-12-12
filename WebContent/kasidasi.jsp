@@ -155,9 +155,9 @@
 <body>
     <div id="sideNav">
         <ul style="list-style:none;">
-        <li><a href="kasidasi.jsp" class="linkBtn">カルテ貸出</a></li>
-        <li><a href="karuteichiran.jsp" class="linkBtn">カルテ一覧</a></li>
-        <li><a href="kanri.jsp" class="linkBtn">カルテ管理</a></li>
+        <li><a href="/ais2/kasidasi" class="linkBtn">カルテ貸出</a></li>
+        <li><a href="/ais2/karteichiran" class="linkBtn">カルテ一覧</a></li>
+        <li><a href="/ais2/kanri" class="linkBtn">カルテ管理</a></li>
         <li id="end"><a href="" class="linkBtn" >終　　　了</a></li>
         </ul>
     </div>
