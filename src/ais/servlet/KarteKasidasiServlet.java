@@ -43,6 +43,7 @@ public class KarteKasidasiServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		List<KarteKasidasiDto> dataList = CsvUtil.importKasidasiCSV("C:\\Users\\yuki\\Desktop\\Java関係\\pleiades\\workspace\\ais2\\data\\kasidasi.csv");
 		List<KarteKasidasiDto> viewList = new ArrayList<KarteKasidasiDto>();
 
@@ -50,17 +51,31 @@ public class KarteKasidasiServlet extends HttpServlet {
 		String karteNo = request.getParameter("karteNo");
 		String kana = request.getParameter("kana");
 		String name = request.getParameter("name");
-	//	String birth = request.getParameter("birth");    csvにないデータ
-	//	String age = request.getParameter("age");
-	//	String gender = request.getParameter("gender");
+		String birth = request.getParameter("birth");
+		String age = request.getParameter("age");
+		String gender = request.getParameter("gender");
 
 		for(KarteKasidasiDto dto : dataList) {
-			if(dto.getId().startsWith(userId)) {
+			if(!userId.equals("") && dto.getId().startsWith(userId)) {		//IDが入力されていて、csvのuserIdに前方一致すれば値を返す。
 				viewList.add(dto);
-			}//else if (dto.getKarteNo().startsWith(karteNo)) {
-			//	viewList.add(dto);
-			//}
+			}else if (!karteNo.equals("") && dto.getKarteNo().startsWith(karteNo)) {
+				viewList.add(dto);
+			}else if (!kana.equals("") && dto.getKana().startsWith(kana)) {
+				viewList.add(dto);
+			}else if (!name.equals("") && dto.getName().startsWith(name)) {
+				viewList.add(dto);
+			}else if (!birth.equals("") && dto.getBirth().startsWith(birth)) {
+				viewList.add(dto);
+			}else if (!age.equals("") && dto.getAge().startsWith(age)) {
+				viewList.add(dto);
+			}else if (!gender.equals("") && dto.getGender().startsWith(gender)) {
+				viewList.add(dto);
+			}
+
 		}
+
+
+
 
 		request.setAttribute("dataList", viewList);
 
